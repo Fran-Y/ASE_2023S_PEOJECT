@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\vs code\ywLoginPage\LoginPage\obj\Debug\
+C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\obj\Debug\
 BookStoreGUI
 none
 false
 DEBUG;TRACE
-D:\vs code\ywLoginPage\LoginPage\App.xaml
-2184119814
+C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\App.xaml
+3-1005567013
 
-7-137081947
-15-796360530
-LoginDialog.xaml;MainWindow.xaml;
+8-998951019
+15-1211358904
+LoginDialog.xaml;MainWindow.xaml;OrderItemDialog.xaml;
 
-True
+False
 
