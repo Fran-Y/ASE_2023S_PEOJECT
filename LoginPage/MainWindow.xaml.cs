@@ -73,12 +73,16 @@ namespace BookStoreGUI
                 bookOrder.AddItem(new OrderItem(isbn, title, unitPrice, quantity));
             }
         }
-        private void removeButton_Click(object sender, RoutedEventArgs e)
+     private void removeButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.orderListView.SelectedItem != null)
             {
                 var selectedOrderItem = this.orderListView.SelectedItem as OrderItem;
                 bookOrder.RemoveItem(selectedOrderItem.BookID);
+
+                // Refresh the ListView after removing the book
+                this.orderListView.ItemsSource = null;
+                this.orderListView.ItemsSource = bookOrder.OrderItemList;
             }
         }
         private void chechoutButton_Click(object sender, RoutedEventArgs e)
