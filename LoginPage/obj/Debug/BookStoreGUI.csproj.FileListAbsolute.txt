@@ -129,3 +129,5 @@ D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.exe
 D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.pdb
 D:\VScp\BookStore\LoginPage\obj\Debug\FeedbackDialog.g.cs
 D:\VScp\BookStore\LoginPage\obj\Debug\FeedbackDialog.baml
+C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\obj\Debug\FeedbackDialog.g.cs
+C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\obj\Debug\FeedbackDialog.baml
