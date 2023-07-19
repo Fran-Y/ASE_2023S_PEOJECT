@@ -73,6 +73,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="FeedbackDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +85,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FeedbackDialog.xaml.cs">
+      <DependentUpon>FeedbackDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackDialogViewModel.cs" />
     <Compile Include="LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
       <SubType>Code</SubType>

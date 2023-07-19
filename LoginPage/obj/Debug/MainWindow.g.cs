@@ -146,13 +146,29 @@ namespace BookStoreGUI {
         
         #line 76 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button removeButton;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 69 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button feedbackButton;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 70 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button checkoutOrderButton;
         
         #line default
         #line hidden
         
         
-        #line 81 "..\..\MainWindow.xaml"
+        #line 73 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock statusTextBlock;
         
@@ -260,10 +276,10 @@ namespace BookStoreGUI {
             #line default
             #line hidden
             return;
-            case 15:
+            case 13:
             this.checkoutOrderButton = ((System.Windows.Controls.Button)(target));
             
-            #line 77 "..\..\MainWindow.xaml"
+            #line 69 "..\..\MainWindow.xaml"
             this.checkoutOrderButton.Click += new System.Windows.RoutedEventHandler(this.chechoutButton_Click);
             
             #line default

@@ -92,3 +92,40 @@ C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\bin\Debug\BookStoreDATA.exe
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\bin\Debug\BookStoreDATA.pdb
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\LoginPage\bin\Debug\BookStoreDATA.exe.config
+D:\VScp\BookStore\LoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreGUI.exe.config
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreGUI.exe
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreGUI.pdb
+D:\VScp\BookStore\LoginPage\bin\Debug\System.Data.SqlClient.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\UnitTestLoginPage.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreDATA.exe
+D:\VScp\BookStore\LoginPage\bin\Debug\UnitTestLoginPage.pdb
+D:\VScp\BookStore\LoginPage\bin\Debug\UnitTestLoginPage.dll.config
+D:\VScp\BookStore\LoginPage\bin\Debug\System.Data.SqlClient.xml
+D:\VScp\BookStore\LoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreDATA.pdb
+D:\VScp\BookStore\LoginPage\bin\Debug\BookStoreDATA.exe.config
+D:\VScp\BookStore\LoginPage\bin\Debug\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.csproj.AssemblyReference.cache
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.csproj.SuggestedBindingRedirects.cache
+D:\VScp\BookStore\LoginPage\obj\Debug\MainWindow.baml
+D:\VScp\BookStore\LoginPage\obj\Debug\OrderItemDialog.baml
+D:\VScp\BookStore\LoginPage\obj\Debug\LoginDialog.g.cs
+D:\VScp\BookStore\LoginPage\obj\Debug\MainWindow.g.cs
+D:\VScp\BookStore\LoginPage\obj\Debug\OrderItemDialog.g.cs
+D:\VScp\BookStore\LoginPage\obj\Debug\App.g.cs
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI_MarkupCompile.cache
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI_MarkupCompile.lref
+D:\VScp\BookStore\LoginPage\obj\Debug\LoginDialog.baml
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.g.resources
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.Properties.Resources.resources
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.csproj.GenerateResource.cache
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.csproj.CoreCompileInputs.cache
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.csproj.CopyComplete
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.exe
+D:\VScp\BookStore\LoginPage\obj\Debug\BookStoreGUI.pdb
+D:\VScp\BookStore\LoginPage\obj\Debug\FeedbackDialog.g.cs
+D:\VScp\BookStore\LoginPage\obj\Debug\FeedbackDialog.baml
