@@ -46,3 +46,21 @@ C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\UnitTestL
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\UnitTestLoginPage\bin\Debug\BookStoreDATA.exe
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\UnitTestLoginPage\bin\Debug\BookStoreDATA.pdb
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project\UnitTestLoginPage\bin\Debug\BookStoreDATA.exe.config
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\UnitTestLoginPage.dll.config
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\UnitTestLoginPage.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\UnitTestLoginPage.pdb
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\BookStoreDATA.exe
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\BookStoreDATA.pdb
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\BookStoreDATA.exe.config
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\VScp\BookStore\UnitTestLoginPage\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\VScp\BookStore\UnitTestLoginPage\obj\Debug\BookStoreLIB.csproj.AssemblyReference.cache
+D:\VScp\BookStore\UnitTestLoginPage\obj\Debug\BookStoreLIB.csproj.CoreCompileInputs.cache
+D:\VScp\BookStore\UnitTestLoginPage\obj\Debug\BookStoreLIB.csproj.CopyComplete
+D:\VScp\BookStore\UnitTestLoginPage\obj\Debug\UnitTestLoginPage.dll
+D:\VScp\BookStore\UnitTestLoginPage\obj\Debug\UnitTestLoginPage.pdb
