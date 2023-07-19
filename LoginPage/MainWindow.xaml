@@ -18,70 +18,71 @@
 		    Width="75" Margin="28,2,0,0" Click="searchButton_Click" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Label Content="Categories:" Margin="18,0,0,0"/>
-                <ComboBox ItemsSource="{Binding}" x:Name="categoriesComboBox"
+                    <Label Content="Categories:" Margin="18,0,0,0"/>
+                    <ComboBox ItemsSource="{Binding}" x:Name="categoriesComboBox"
 		    IsSynchronizedWithCurrentItem="True"
 		    DisplayMemberPath="Name" Height="23" Margin="12" Width="200">
-                    <ComboBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel />
-                        </ItemsPanelTemplate>
-                    </ComboBox.ItemsPanel>
-                </ComboBox>
-                <Button Content="Login" Height="25" x:Name="loginButton"
+                        <ComboBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ComboBox.ItemsPanel>
+                    </ComboBox>
+                    <Button Content="Login" Height="25" x:Name="loginButton"
 		    Width="75" Margin="28,2,0,0" Click="loginButton_Click" />
-                <Button Content="Exit" Height="25" x:Name="exitButton"
+                    <Button Content="Exit" Height="25" x:Name="exitButton"
 		    Width="75" Margin="20,2,0,0" Click="exitButton_Click" />
-            </StackPanel>
-            <DataGrid AutoGenerateColumns="False" Height="165" 
+                </StackPanel>
+                <DataGrid AutoGenerateColumns="False" Height="165" 
 		ItemsSource="{Binding drCat_Book}"
 		x:Name="ProductsDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected"
 		Width="490" HorizontalAlignment="Left" Margin="20,0,20,10"
 		SelectionMode="Single">
-                <DataGrid.Columns>
-                    <DataGridTextColumn
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
 			x:Name="titleColumn" Binding="{Binding Title}"
 			Header="Title" Width="50*" />
-                    <DataGridTextColumn
+                        <DataGridTextColumn
 			x:Name="authorColumn" Binding="{Binding Author}"
 			Header="Author" Width="18*" />
-                    <DataGridTextColumn
+                        <DataGridTextColumn
 			x:Name="priceColumn" Binding="{Binding Price}"
 			Header="Price" Width="12*" CanUserSort="False" />
-                    <DataGridTextColumn
+                        <DataGridTextColumn
 			x:Name="yearColumn" Binding="{Binding Year}"
 			Header="Year" Width="8*" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <StackPanel Orientation="Vertical">
-                <ListView x:Name="orderListView" MinHeight="150" Width="490"
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Orientation="Vertical">
+                    <ListView x:Name="orderListView" MinHeight="150" Width="490"
 		    ItemsSource="{Binding}" SelectionMode="Single">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Width="80" Header="ISBN"
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="80" Header="ISBN"
 				DisplayMemberBinding="{Binding BookID}" />
-                            <GridViewColumn Width="285" Header="Title"
+                                <GridViewColumn Width="285" Header="Title"
 				DisplayMemberBinding="{Binding BookTitle}" />
-                            <GridViewColumn Width="60" Header="Quantity"
+                                <GridViewColumn Width="60" Header="Quantity"
 				DisplayMemberBinding="{Binding Quantity}" />
-                            <GridViewColumn Width="60" Header="Subtotal"
+                                <GridViewColumn Width="60" Header="Subtotal"
 				DisplayMemberBinding="{Binding SubTotal}" />
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Width="491">
+                    <Button x:Name="addButton" MinHeight="25" MinWidth="80"
+            Content="Add Book" Click="addButton_Click" Width="14" />
+                    <Button x:Name="removeButton" MinHeight="25" MinWidth="80" Content="Remove Book" Click="removeButton_Click" Width="25" Margin="10,0,0,0"/>
+                    <Button x:Name="feedbackButton" MinHeight="25" MinWidth="80" Content="Add feedback" Click="rateButton_Click" Width="34" Margin="10,0,0,0"/>
+                    <Button x:Name="detailButton" Content="Show Details" MinHeight="25" MinWidth="80" Click="detailButton_Click" Width="34" Margin="10,0,0,0"/>
+                    <Button x:Name="checkoutOrderButton" MinHeight="25" MinWidth="80"
+            Content="Proceed to Checkout" Click="chechoutButton_Click" Width="131" Margin="10,0,0,0"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Width="491">
-                <Button x:Name="addButton" MinHeight="25" MinWidth="80"
-            Content="Add Book" Click="addButton_Click" />
-                <Button x:Name="removeButton" MinHeight="25" MinWidth="80" Content="Remove Book" Click="removeButton_Click" Width="90" Margin="20,0,0,0"/>
-                <Button x:Name="feedbackButton" MinHeight="25" MinWidth="80" Content="Add feedback" Click="rateButton_Click" Width="90" Margin="20,0,0,0"/>
-                <Button x:Name="checkoutOrderButton" MinHeight="25" MinWidth="80"
-            Content="Proceed to Checkout" Click="chechoutButton_Click" Width="130" Margin="50,0,0,0"/>
-            </StackPanel>
-        </StackPanel>
-        <StatusBar VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
-            <TextBlock x:Name="statusTextBlock"><Run Text="Please login before proceeding to checkout."/></TextBlock>
-        </StatusBar>
+            <StatusBar VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="statusTextBlock"><Run Text="Please login before proceeding to checkout."/></TextBlock>
+            </StatusBar>
         </StackPanel>
     </Grid>
 </Window>

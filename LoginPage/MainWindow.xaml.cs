@@ -94,6 +94,34 @@ namespace BookStoreGUI
                 //bookOrder.AddItem(new OrderItem(isbn, title, unitPrice, feedback));
             }
         }
+
+        public void detailButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProductsDataGrid.SelectedItems.Count > 0)
+            {
+                DetailDialog detailDialog = new DetailDialog();
+                DataRowView selectedRow;
+                selectedRow = (DataRowView)this.ProductsDataGrid.SelectedItems[0];
+                detailDialog.isbnTextBox.Text = selectedRow.Row.ItemArray[0].ToString();
+                detailDialog.titleTextBox.Text = selectedRow.Row.ItemArray[2].ToString();
+                detailDialog.authorTextBox.Text = selectedRow.Row.ItemArray[3].ToString();
+                detailDialog.priceTextBox.Text = selectedRow.Row.ItemArray[4].ToString();
+                detailDialog.yearTextBox.Text = selectedRow.Row.ItemArray[5].ToString();
+             
+                detailDialog.ShowDialog();
+                if (detailDialog.DialogResult == true)
+                {
+                    string isbn = detailDialog.isbnTextBox.Text;
+                    string title = detailDialog.titleTextBox.Text;
+                    string author = detailDialog.authorTextBox.Text;
+                    double unitPrice = double.Parse(detailDialog.priceTextBox.Text);
+                    string year = detailDialog.yearTextBox.Text;
+                    string feedback = detailDialog.feedbackTextBox.Text;
+              
+                }
+            }
+            else MessageBox.Show("Please select one book from above.");
+        }
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.orderListView.SelectedItem != null)

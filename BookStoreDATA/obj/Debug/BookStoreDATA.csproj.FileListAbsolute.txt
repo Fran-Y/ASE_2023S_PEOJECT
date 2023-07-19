@@ -1,0 +1,11 @@
+D:\vs code\project2\BookStoreDATA\bin\Debug\BookStoreDATA.exe.config
+D:\vs code\project2\BookStoreDATA\bin\Debug\BookStoreDATA.exe
+D:\vs code\project2\BookStoreDATA\bin\Debug\BookStoreDATA.pdb
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.csprojAssemblyReference.cache
+D:\vs code\project2\BookStoreDATA\obj\Debug\App.g.cs
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA_MarkupCompile.cache
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.Properties.Resources.resources
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.csproj.GenerateResource.cache
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.csproj.CoreCompileInputs.cache
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.exe
+D:\vs code\project2\BookStoreDATA\obj\Debug\BookStoreDATA.pdb
