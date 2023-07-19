@@ -63,12 +63,11 @@
                 </ListView>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <Button x:Name="addButton" MinHeight="25" MinWidth="60"
-		    Content="Add Book" Click="addButton_Click" />
-                <Button x:Name="addRate" MinHeight="25" MinWidth="60"
-                    Content="Add Rate" Click="rateButton_Click" Margin="5,0,0,0"/>
+               <Button x:Name="addButton" MinHeight="25" MinWidth="80"
+            Content="Add Book" Click="addButton_Click" />
+                <Button x:Name="removeButton" MinHeight="25" MinWidth="80" Content="Remove Book" Click="removeButton_Click" Width="90" Margin="39,0,0,0"/>
                 <Button x:Name="checkoutOrderButton" MinHeight="25" MinWidth="80"
-		    Content="Proceed to Checkout" Click="chechoutButton_Click" Width="121" Margin="286,0,0,0"/>
+            Content="Proceed to Checkout" Click="chechoutButton_Click" Width="121" Margin="180,0,0,0"/>
             </StackPanel>
         </StackPanel>
         <StatusBar VerticalAlignment="Bottom" HorizontalAlignment="Stretch">

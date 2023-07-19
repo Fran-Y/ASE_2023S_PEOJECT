@@ -98,6 +98,10 @@ namespace BookStoreGUI
             {
                 var selectedOrderItem = this.orderListView.SelectedItem as OrderItem;
                 bookOrder.RemoveItem(selectedOrderItem.BookID);
+
+                // Refresh the ListView after removing the book
+                this.orderListView.ItemsSource = null;
+                this.orderListView.ItemsSource = bookOrder.OrderItemList;
             }
         }
         private void chechoutButton_Click(object sender, RoutedEventArgs e)
