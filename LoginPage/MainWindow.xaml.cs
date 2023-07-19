@@ -28,6 +28,7 @@ namespace BookStoreGUI
         DataSet dsBookCat;
         UserData userData;
         BookOrder bookOrder;
+        BookCatalog bookCat;
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             LoginDialog dlg = new LoginDialog();
@@ -44,7 +45,8 @@ namespace BookStoreGUI
             }
         }
         private void exitButton_Click(object sender, RoutedEventArgs e) { this.Close(); }
-        public MainWindow() { InitializeComponent(); }
+        public MainWindow() { InitializeComponent(); 
+            bookCat = new BookCatalog(); }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BookCatalog bookCat = new BookCatalog();
@@ -89,6 +91,11 @@ namespace BookStoreGUI
             orderId.ToString());
         }
 
-
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            var searchText = searchTextBox.Text;
+            var searchResults = bookCat.SearchBooks(searchText); 
+            ProductsDataGrid.ItemsSource = searchResults.Tables["Books"].DefaultView;
+        }
     }
 }

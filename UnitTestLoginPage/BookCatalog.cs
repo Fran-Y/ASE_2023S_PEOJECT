@@ -12,6 +12,11 @@ namespace BookStoreLIB
 {
     public class BookCatalog
     {
+        public DataSet SearchBooks(string searchText)
+        {
+            DALBookCatalog dalBookCatalog = new DALBookCatalog();
+            return dalBookCatalog.SearchBooks(searchText);
+        }
         public DataSet GetBookInfo()
         {
             //perform any business logic befor passing to client.

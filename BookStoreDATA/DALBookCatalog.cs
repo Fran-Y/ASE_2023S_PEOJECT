@@ -17,6 +17,29 @@ namespace BookStoreLIB {
         public DALBookCatalog() {
             conn = new SqlConnection(BookStoreDATA.Properties.Settings.Default.xyConnectionString);
         }
+        public DataSet SearchBooks(string searchText)
+        {
+            DataSet dsSearchResults = new DataSet();
+
+            try
+            {
+                string query = "SELECT ISBN, CategoryID, Title, Author, Price, Year, Edition, Publisher " +
+                               "FROM BookData WHERE Title LIKE @searchText";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsSearchResults, "Books");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return dsSearchResults;
+        }
+
         public DataSet GetBookInfo() {
             try {
                 String strSQL = "Select CategoryID, Name, Description from Category";
