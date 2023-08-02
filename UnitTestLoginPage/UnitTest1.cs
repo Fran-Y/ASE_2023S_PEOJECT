@@ -24,7 +24,7 @@ namespace UnitTestLoginPage
 
             Assert.AreEqual(expectedReturn, actualReturn);
             Assert.AreEqual(expectedUserId, actualUserId);
-        }
+        } 
 
         [TestMethod]
         public void TestMethod2()
