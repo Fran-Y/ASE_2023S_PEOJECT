@@ -56,17 +56,39 @@ namespace ManageClient
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            // 这个处理器不会做任何事
+            string selectedTable = TablesComboBox.SelectedItem.ToString();
+            DataTable dt = DAL.GetDataTable(selectedTable);
+
+            AddWindow addWindow = new AddWindow(dt, DAL, TablesComboBox.SelectedItem.ToString());
+            bool? result = addWindow.ShowDialog();
+
+            if (result == true)
+            {
+                // Refresh the main window data grid
+                LoadTableData(selectedTable);
+            }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            // 这个处理器也不会做任何事
+            string selectedTable = TablesComboBox.SelectedItem.ToString();
+            DataRowView rowView = (DataRowView)TableDataGrid.SelectedItem;
+            DataRow row = rowView.Row;
+            if (row != null)
+            {
+                DataRow selectedRow = row;
+                DAL.DeleteRow(selectedTable, selectedRow);
+
+                // Refresh the data grid after deleting the row
+                DataTable updatedTable = DAL.GetDataTable(selectedTable);
+                TableDataGrid.ItemsSource = updatedTable.DefaultView;
+            }
         }
 
+        /*function no done*/
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (TableDataGrid.SelectedItem != null)
+/*            if (TableDataGrid.SelectedItem != null)
             {
                 DataRowView rowView = (DataRowView)TableDataGrid.SelectedItem;
                 DataRow row = rowView.Row;
@@ -78,7 +100,7 @@ namespace ManageClient
                     // TODO: Refresh the main window data grid
                     LoadTableData(TablesComboBox.SelectedItem.ToString());
                 }
-            }
+            }*/
         }
 
     }
