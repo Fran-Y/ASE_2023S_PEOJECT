@@ -16,3 +16,5 @@ D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\ManageClient.csproj.GenerateRes
 D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\ManageClient.csproj.CoreCompileInputs.cache
 D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\ManageClient.exe
 D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\ManageClient.pdb
+D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\AddWindow.g.cs
+D:\VScp\ASE_2023S_PEOJECT\ManageClient\obj\Debug\AddWindow.baml

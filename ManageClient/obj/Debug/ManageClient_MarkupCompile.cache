@@ -9,12 +9,17 @@ ManageClient
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\yuan9\OneDrive\Desktop\Acdemic documents\23summer\ASE\project(sprint)\ManageClient\App.xaml
 21154441976
+=======
+D:\VScp\ASE_2023S_PEOJECT\ManageClient\App.xaml
+3-1657826485
+>>>>>>> c6d75d68775892aa7a3e424be270e0a81e1e5384
 
-81180504545
+9273002822
 13-1310406943
-MainWindow.xaml;UpdateWindow.xaml;
+AddWindow.xaml;MainWindow.xaml;UpdateWindow.xaml;
 
 True
 
