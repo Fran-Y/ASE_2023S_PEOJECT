@@ -29,24 +29,20 @@ namespace BookStoreGUI
         UserData userData;
         BookOrder bookOrder;
         BookCatalog bookCat;
-        private void loginButton_Click(object sender, RoutedEventArgs e)
-        {
-            LoginDialog dlg = new LoginDialog();
-            dlg.Owner = this;
-            dlg.ShowDialog();
-            // Process data entered by user if dialog box is accepted
-            if (dlg.DialogResult == true)
-            {
-                if (userData.LogIn(dlg.nameTextBox.Text, dlg.passwordTextBox.Password) == true)
-                    this.statusTextBlock.Text = "You are logged in as User #" +
-                    userData.UserID;
-                else
-                    this.statusTextBlock.Text = "Your login failed. Please try again.";
-            }
+        LoginDialog loginDialog;
+        
+      
+        public MainWindow() { 
+            InitializeComponent(); 
+            bookCat = new BookCatalog();
         }
-        private void exitButton_Click(object sender, RoutedEventArgs e) { this.Close(); }
-        public MainWindow() { InitializeComponent(); 
-            bookCat = new BookCatalog(); }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            loginDialog = new LoginDialog();
+            this.Close();
+            loginDialog.ShowDialog();
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BookCatalog bookCat = new BookCatalog();
@@ -148,5 +144,15 @@ namespace BookStoreGUI
             var searchResults = bookCat.SearchBooks(searchText); 
             ProductsDataGrid.ItemsSource = searchResults.Tables["Books"].DefaultView;
         }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            searchTextBox.Text = "";  // Clear the search text box
+            var allBooks = bookCat.GetBookInfo();  // Get all books
+            ProductsDataGrid.ItemsSource = allBooks.Tables["Books"].DefaultView;  // Refresh the data grid
+        }
+
+       
+
     }
 }

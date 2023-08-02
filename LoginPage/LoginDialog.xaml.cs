@@ -22,20 +22,40 @@ namespace BookStoreGUI
     /// </summary>
     public partial class LoginDialog : Window
     {
+        MainWindow mainWindow;
+        UserData userData;
         public LoginDialog()
         {
             InitializeComponent();
+            userData = new UserData();
+            
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
-           
+            mainWindow = new MainWindow();
+            if (userData.LogIn(nameTextBox.Text, passwordTextBox.Password))
+            {
+
+                mainWindow.statusTextBlock.Text = "You are logged in as User #" +
+                    userData.UserID;
+                this.Close();
+                mainWindow.ShowDialog();
+                // If user login successfully, show the main window
+                
+            }
+            else
+            {
+                
+                // If login failed, show an error message and do not close the dialog
+                MessageBox.Show("Login failed. Please try again.");
+            }
+
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = false;
+            this.Close();
 
         }
     }
