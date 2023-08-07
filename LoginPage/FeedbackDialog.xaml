@@ -24,7 +24,9 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Margin="2,2,2,2">ISBN:</Label>
         <TextBox Name="isbnTextBox" Grid.Column="1"
-                 Grid.Row="0" Margin="2,0,2.4,1.8" Grid.ColumnSpan="2" IsEnabled="False" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23"/>
+         Grid.Row="0" Margin="2,0,2.4,1.8" Grid.ColumnSpan="2" IsEnabled="False" 
+         VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23"
+         Text="{Binding ISBN}"/>
         <Label Grid.Column="0" Grid.Row="1" Margin="2,2,2,2">Title:</Label>
         <TextBox Name="titleTextBox" Grid.Column="1"
                  Grid.Row="1" Margin="2,0,2.4,1.6" Grid.ColumnSpan="2" IsEnabled="False" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23"/>

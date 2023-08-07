@@ -98,7 +98,6 @@
     <Compile Include="FeedbackDialog.xaml.cs">
       <DependentUpon>FeedbackDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FeedbackDialogViewModel.cs" />
     <Compile Include="LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -169,6 +168,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookStoreDATA\BookStoreDATA.csproj">
+      <Project>{a51fa12e-dc08-4161-963e-55bf5f3c3da0}</Project>
+      <Name>BookStoreDATA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnitTestLoginPage\BookStoreLIB.csproj">
       <Project>{ccfcb03d-8d4f-4bbb-8f9c-48d58e5e7e4a}</Project>
       <Name>BookStoreLIB</Name>

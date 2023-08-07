@@ -8,18 +8,21 @@ namespace BookStoreGUI
 {
     public class FeedbackDialogViewModel
     {
-        public string FeedbackText { get; set; }
-
-        public bool SubmitFeedback()
+        // Add an ISBN property
+        public string ISBN { get; set; }
+        private string feedbackText;
+        public string FeedbackText
         {
-            if (string.IsNullOrWhiteSpace(FeedbackText))
+            get { return feedbackText; }
+            set
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                if (feedbackText != value)
+                {
+                    feedbackText = value;
+                   // OnPropertyChanged(nameof(FeedbackText));
+                }
             }
         }
+        // Removed the SubmitFeedback method because it's better suited in the controller
     }
 }

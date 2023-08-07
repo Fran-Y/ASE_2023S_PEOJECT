@@ -60,10 +60,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DALBookCatalog.cs" />
+    <Compile Include="DALFeedback.cs" />
     <Compile Include="DALOrder.cs" />
     <Compile Include="DALUserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feedback.cs" />
     <Compile Include="FeedbackDialogViewModel.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

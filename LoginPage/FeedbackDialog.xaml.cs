@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UnitTestLoginPage;
 
 namespace BookStoreGUI
 {
@@ -19,11 +20,12 @@ namespace BookStoreGUI
     /// </summary>
     public partial class FeedbackDialog : Window
     {
-        public FeedbackDialog()
+        public FeedbackDialog(string isbn)
         {
             InitializeComponent();
 
             viewModel = new FeedbackDialogViewModel();
+            viewModel.ISBN = isbn; // Set the ISBN
             this.DataContext = viewModel;
         }
 
@@ -35,15 +37,17 @@ namespace BookStoreGUI
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            if (viewModel.SubmitFeedback())
+            Feedback feedback = new Feedback(UserSession.CurrentUser.UserID, viewModel.ISBN, viewModel.FeedbackText);
+
+            DALFeedback dalFeedback = new DALFeedback();
+            if (dalFeedback.SaveFeedback(feedback))
             {
                 MessageBox.Show("Thank you for your feedback.");
                 this.DialogResult = true;
             }
             else
             {
-                MessageBox.Show("No valid feedback.");
-                this.DialogResult = false;
+                MessageBox.Show("An error occurred while saving your feedback. Please try again.");
             }
         }
 

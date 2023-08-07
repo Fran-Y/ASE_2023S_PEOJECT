@@ -74,17 +74,20 @@ namespace BookStoreGUI
         }
         private void rateButton_Click(object sender, RoutedEventArgs e)
         {
-            FeedbackDialog feedbackItemDialog = new FeedbackDialog();
             DataRowView selectedRow;
             selectedRow = (DataRowView)this.ProductsDataGrid.SelectedItems[0];
+            string isbn = selectedRow.Row.ItemArray[0].ToString();
+          
+            FeedbackDialog feedbackItemDialog = new FeedbackDialog(isbn);
             feedbackItemDialog.isbnTextBox.Text = selectedRow.Row.ItemArray[0].ToString();
+            
             feedbackItemDialog.titleTextBox.Text = selectedRow.Row.ItemArray[2].ToString();
             feedbackItemDialog.priceTextBox.Text = selectedRow.Row.ItemArray[4].ToString();
             feedbackItemDialog.Owner = this;
             feedbackItemDialog.ShowDialog();
             if (feedbackItemDialog.DialogResult == true)
             {
-                string isbn = feedbackItemDialog.isbnTextBox.Text;
+                //string isbn = feedbackItemDialog.isbnTextBox.Text;
                 string title = feedbackItemDialog.titleTextBox.Text;
                 double unitPrice = double.Parse(feedbackItemDialog.priceTextBox.Text);
                 //string feedback = int.Parse(feedbackItemDialog.quantityTextBox.Text);
