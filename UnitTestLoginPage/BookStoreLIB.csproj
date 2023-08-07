@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="BookCatalog.cs" />
     <Compile Include="BookOrder.cs" />
+    <Compile Include="DataAccessLayer.cs" />
     <Compile Include="FeedbackDialogViewModel.cs" />
+    <Compile Include="GetTableName.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
