@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,16 +28,57 @@
             </ComboBox.ItemContainerStyle>
         </ComboBox>
 
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="TableDataGrid" Margin="20,0,20,50"/>
 
-        <Button Grid.Row="1" Grid.Column="1" Name="AddButton" Content="Add" Click="AddButton_Click" 
-                Margin="10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="TableDataGrid" Margin="20"/>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
+            <Button Name="AddButton" Content="Add" Click="AddButton_Click" 
+                    Margin="10" Padding="15,5" VerticalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2196F3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="#2196F3"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1976D2"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
 
-        <Button Grid.Row="1" Grid.Column="2" Name="DeleteButton" Content="Delete" Click="DeleteButton_Click" 
-                Margin="10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Button Name="DeleteButton" Content="Delete" Click="DeleteButton_Click" 
+                    Margin="10" Padding="15,5" VerticalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E53935"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="#E53935"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D32F2F"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
 
-        <Button Grid.Row="1" Grid.Column="3" Name="UpdateButton" Content="Update" Click="UpdateButton_Click" 
-                Margin="10,20,20,20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Button Name="UpdateButton" Content="Update" Click="UpdateButton_Click" 
+                    Margin="10" Padding="15,5" VerticalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#4CAF50"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="#4CAF50"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#388E3C"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
 

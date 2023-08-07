@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace BookStoreLIB
 {
@@ -128,6 +129,7 @@ namespace BookStoreLIB
         public void DeleteRow(string tableName, DataRow row)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
+
             {
                 connection.Open();
 
@@ -147,6 +149,48 @@ namespace BookStoreLIB
                 }
             }
         }
+
+        /*public void UpdateLine(string tableName, string rowId, DataRow updatedRow, string whereCondition)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                StringBuilder queryBuilder = new StringBuilder($"UPDATE [dbo].[{tableName}] SET ");
+
+                foreach (DataColumn column in updatedRow.Table.Columns)
+                {
+                    object value = updatedRow[column.ColumnName];
+                    if (value == DBNull.Value)
+                    {
+                        queryBuilder.Append($"[{column.ColumnName}] = NULL, ");
+                    }
+                    else if (value is string || value is DateTime)
+                    {
+                        queryBuilder.Append($"[{column.ColumnName}] = '{value}', ");
+                    }
+                    else
+                    {
+                        queryBuilder.Append($"[{column.ColumnName}] = {value}, ");
+                    }
+                }
+
+                queryBuilder.Length -= 2;  // Remove the trailing comma and space
+                queryBuilder.Append($" WHERE {whereCondition}");
+
+                SqlCommand cmd = new SqlCommand(queryBuilder.ToString(), conn);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    throw;  // Optionally rethrow the exception if needed
+                }
+            }
+        }*/
+
 
     }
 

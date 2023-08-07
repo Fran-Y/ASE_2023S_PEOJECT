@@ -33,5 +33,37 @@ namespace UnitTestLoginPage
                 }
             }
         }
+
+
+        public string GetFeedback(string isbn)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Content FROM Feedback WHERE ISBN = @ISBN";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ISBN", isbn);
+
+                try
+                {
+                    conn.Open();
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return result.ToString();  // If any feedback exists, return the content of the first one
+                    }
+                    else
+                    {
+                        return null;  // If no feedback exists, return null
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    return null;
+                }
+            }
+        }
     }
 }

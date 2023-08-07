@@ -59,6 +59,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DALUpgrade.cs" />
     <Compile Include="DALBookCatalog.cs" />
     <Compile Include="DALFeedback.cs" />
     <Compile Include="DALOrder.cs" />

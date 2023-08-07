@@ -102,21 +102,26 @@ namespace BookStoreGUI
                 DetailDialog detailDialog = new DetailDialog();
                 DataRowView selectedRow;
                 selectedRow = (DataRowView)this.ProductsDataGrid.SelectedItems[0];
+                string isbn = selectedRow.Row.ItemArray[0].ToString();
+                detailDialog.isbnTextBox.Text = isbn;
                 detailDialog.isbnTextBox.Text = selectedRow.Row.ItemArray[0].ToString();
                 detailDialog.titleTextBox.Text = selectedRow.Row.ItemArray[2].ToString();
                 detailDialog.authorTextBox.Text = selectedRow.Row.ItemArray[3].ToString();
                 detailDialog.priceTextBox.Text = selectedRow.Row.ItemArray[4].ToString();
                 detailDialog.yearTextBox.Text = selectedRow.Row.ItemArray[5].ToString();
-             
+                DALFeedback dalFeedback = new DALFeedback();
+                string feedback = dalFeedback.GetFeedback(isbn);
+                detailDialog.feedbackTextBox.Text = feedback != null ? feedback : "No feedback found";
+
                 detailDialog.ShowDialog();
                 if (detailDialog.DialogResult == true)
                 {
-                    string isbn = detailDialog.isbnTextBox.Text;
+                    isbn = detailDialog.isbnTextBox.Text;
                     string title = detailDialog.titleTextBox.Text;
                     string author = detailDialog.authorTextBox.Text;
                     double unitPrice = double.Parse(detailDialog.priceTextBox.Text);
                     string year = detailDialog.yearTextBox.Text;
-                    string feedback = detailDialog.feedbackTextBox.Text;
+                    feedback = detailDialog.feedbackTextBox.Text;
               
                 }
             }

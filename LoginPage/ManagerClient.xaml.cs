@@ -84,22 +84,26 @@ namespace BookStoreGUI
             }
         }
 
-        /*function no done*/
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            /*            if (TableDataGrid.SelectedItem != null)
-                        {
-                            DataRowView rowView = (DataRowView)TableDataGrid.SelectedItem;
-                            DataRow row = rowView.Row;
-                            UpdateWindow updateWindow = new UpdateWindow(row, DAL);
-                            bool? result = updateWindow.ShowDialog();
+            if (TableDataGrid.SelectedItems.Count > 0)
+            {
+                string selectedTable = TablesComboBox.SelectedItem.ToString();
+                DataTable dt = DAL.GetDataTable(selectedTable);
 
-                            if (result == true)
-                            {
-                                // TODO: Refresh the main window data grid
-                                LoadTableData(TablesComboBox.SelectedItem.ToString());
-                            }
-                        }*/
+                DataRowView selectedRow = (DataRowView)TableDataGrid.SelectedItems[0];
+
+                UpdateWindow updateWindow = new UpdateWindow(dt, DAL, selectedTable, selectedRow);
+                bool? result = updateWindow.ShowDialog();
+
+                if (result == true)
+                {
+                    // Refresh the main window data grid
+                    LoadTableData(selectedTable);
+                    //return selectedRow;
+                }
+            }
+            else MessageBox.Show("Please select one item from above.");
         }
 
     }
