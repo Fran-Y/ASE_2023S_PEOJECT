@@ -28,29 +28,26 @@ namespace BookStoreGUI
         {
             InitializeComponent();
             userData = new UserData();
-            
+
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow = new MainWindow();
             if (userData.LogIn(nameTextBox.Text, passwordTextBox.Password))
             {
-
+                UserSession.CurrentUser = userData;  // Update the user session
+                mainWindow = new MainWindow();  // Create the MainWindow
                 mainWindow.statusTextBlock.Text = "You are logged in as User #" +
                     userData.UserID;
                 this.Close();
                 mainWindow.ShowDialog();
                 // If user login successfully, show the main window
-                
             }
             else
             {
-                
                 // If login failed, show an error message and do not close the dialog
                 MessageBox.Show("Login failed. Please try again.");
             }
-
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)

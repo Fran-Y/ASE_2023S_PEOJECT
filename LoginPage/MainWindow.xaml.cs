@@ -35,6 +35,8 @@ namespace BookStoreGUI
         public MainWindow() { 
             InitializeComponent(); 
             bookCat = new BookCatalog();
+            bookOrder = new BookOrder();
+            userData = new UserData();
         }
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
@@ -48,8 +50,7 @@ namespace BookStoreGUI
             BookCatalog bookCat = new BookCatalog();
             dsBookCat = bookCat.GetBookInfo();
             this.DataContext = dsBookCat.Tables["Category"];
-            bookOrder = new BookOrder();
-            userData = new UserData();
+            
             this.orderListView.ItemsSource = bookOrder.OrderItemList;
         }
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -133,10 +134,19 @@ namespace BookStoreGUI
         private void chechoutButton_Click(object sender, RoutedEventArgs e)
         {
             int orderId;
-            orderId = bookOrder.PlaceOrder(userData.UserID);
-            MessageBox.Show("Your order has been placed. Your order id is " +
-            orderId.ToString());
+            int userId = UserSession.CurrentUser.UserID;  // Get the user ID from the session
+            if (userId > 0)
+            {
+                orderId = bookOrder.PlaceOrder(userId);
+                MessageBox.Show("Your order has been placed. Your order id is " +
+                orderId.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Please log in before placing an order.");
+            }
         }
+
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {

@@ -19,7 +19,7 @@ namespace BookStoreLIB {
         }
         public void AddItem(OrderItem orderItem)
         {
-            foreach (var item in orderItemList)
+            foreach (var item in orderItemList) 
             {
                 if (item.BookID == orderItem.BookID)
                 {

@@ -18,7 +18,7 @@ namespace UnitTestLoginPage
         public Boolean LogIn(string loginName, string passWord) 
         {
             var dbUser = new DALUserInfo();
-            var userData = new UserData();
+       
             bool containsLetter = false, containsNumber = false;
             Console.WriteLine(loginName + "----------" + passWord);
             foreach (char c in passWord)

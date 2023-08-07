@@ -20,7 +20,7 @@ namespace BookStoreLIB {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "insertOrder";
                 SqlParameter inParameter = new SqlParameter();
-                inParameter.ParameterName = "@xmlOrder";
+                inParameter.ParameterName = "@xml";
                 inParameter.Value = xmlOrder;
                 inParameter.DbType = DbType.String;
                 inParameter.Direction = ParameterDirection.Input;
