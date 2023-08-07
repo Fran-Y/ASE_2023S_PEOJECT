@@ -7,38 +7,49 @@ namespace UnitTestLoginPage
 {
     public class DALUserInfo
     {
-        public int LogIn(string userName, string password) {
+        public LoginResult LogIn(string userName, string password)
+        {
             var conn = new SqlConnection(BookStoreDATA.Properties.Settings.Default.xyConnectionString);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "Select UserID from UserData where" 
+                cmd.CommandText = "Select UserID, Manager from UserData where"
                     + " UserName = @UserName and Password = @Password ";
                 cmd.Parameters.AddWithValue("@UserName", userName);
                 cmd.Parameters.AddWithValue("@Password", password);
-                //Console.WriteLine(userName+password);
                 conn.Open();
-                int userId = (int)cmd.ExecuteScalar();
-                //Console.WriteLine("++++++++++"+userId);
-                if (userId > 0)
+                using (var reader = cmd.ExecuteReader())
                 {
-                    //Console.WriteLine("++++++++++" + userId);
-                    return userId;
+                    if (reader.Read())
+                    {
+                        int userId = reader.GetInt32(0);
+                        bool isManager = reader.GetBoolean(1);  // Assuming that Manager column is a boolean type
+                                                                // return a new LoginResult with userId and isManager
+                        return new LoginResult
+                        {
+                            UserId = userId,
+                            IsManager = isManager
+                        };
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                else {
-                    //Console.WriteLine("++++++++++" + userId);
-                    return -1; }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Debug.WriteLine(ex.ToString());
-                return -1;
+                return null;
             }
-            finally{
+            finally
+            {
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
             }
         }
+
 
         /*public DALUserInfo()
         {

@@ -22,7 +22,7 @@ namespace BookStoreGUI
     /// </summary>
     public partial class LoginDialog : Window
     {
-        MainWindow mainWindow;
+        Window window;
         UserData userData;
         public LoginDialog()
         {
@@ -36,12 +36,21 @@ namespace BookStoreGUI
             if (userData.LogIn(nameTextBox.Text, passwordTextBox.Password))
             {
                 UserSession.CurrentUser = userData;  // Update the user session
-                mainWindow = new MainWindow();  // Create the MainWindow
-                mainWindow.statusTextBlock.Text = "You are logged in as User #" +
-                    userData.UserID;
+
+                if (userData.IsManager)
+                {
+                    // If user is a manager, show the manager client window
+                    window = new ManagerClient();  // Create the ManagerClientWindow
+                }
+                else
+                {
+                    // If user is not a manager, show the main window
+                    window = new MainWindow();  // Create the MainWindow
+                    ((MainWindow)window).statusTextBlock.Text = "You are logged in as User #" + userData.UserID;
+                }
+
                 this.Close();
-                mainWindow.ShowDialog();
-                // If user login successfully, show the main window
+                window.ShowDialog();
             }
             else
             {

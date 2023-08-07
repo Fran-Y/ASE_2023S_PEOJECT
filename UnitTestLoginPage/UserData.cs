@@ -14,6 +14,7 @@ namespace UnitTestLoginPage
         public string LoginName { set; get; }
 
         public string Password { set; get; }
+        public bool IsManager { get; private set; }
 
         public Boolean LogIn(string loginName, string passWord) 
         {
@@ -39,19 +40,21 @@ namespace UnitTestLoginPage
                             string firstChar = passWord.Substring(0, 1);
                             if (Char.IsLetter(firstChar[0]))
                             {
-                                UserID = dbUser.LogIn(loginName, passWord);
-                                if (UserID > 0)
-                                {
-                                    LoginName = loginName;
-                                    Password = passWord;
-                                    return true;
-                                }
-                                else
-                                {
-                                MessageBox.Show("Wrong username or password.");
-                                    return false;
-                                }
+                            LoginResult result = dbUser.LogIn(loginName, passWord);
+                            if (result != null)
+                            {
+                                UserID = result.UserId;
+                                IsManager = result.IsManager; // Set this property
+                                LoginName = loginName;
+                                Password = passWord;
+                                return true;
                             }
+                            else
+                            {
+                                MessageBox.Show("Wrong username or password.");
+                                return false;
+                            }
+                        }
                             else
                             {
                             MessageBox.Show("The password must start with a letter.");
