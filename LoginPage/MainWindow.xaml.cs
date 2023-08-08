@@ -39,6 +39,13 @@ namespace BookStoreGUI
             userData = new UserData();
         }
 
+        private void viewOrdersButton_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerOders customerOders = new CustomerOders();
+            customerOders.Owner = this;
+            customerOders.ShowDialog();
+        }
+
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             loginDialog = new LoginDialog();

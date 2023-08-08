@@ -61,6 +61,21 @@ namespace BookStoreLIB
             return tableNames;
         }
 
+        public DataTable GetCustomerOrders(int userID)
+        {
+            DataTable dt = new DataTable();
+            Console.WriteLine("\n"+ userID);
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Orders WHERE UserID = {userID}", connection);
+                dataAdapter.Fill(dt);
+            }
+
+            return dt;
+        }
+
         public DataTable GetDataTable(string tableName)
         {
             DataTable dt = new DataTable();

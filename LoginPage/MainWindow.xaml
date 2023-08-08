@@ -39,8 +39,10 @@
                             <Image Source="Images/search button.png" Stretch="Uniform"/>
                         </Button.Content>
                     </Button>
+                    <Button Content="Orders" Height="25" x:Name="ViewOrders"
+		    Width="75" Margin="30,2,0,0" Click="viewOrdersButton_Click" />
                     <Button Content="Sign Out" Height="25" x:Name="exitButton"
-		    Width="75" Margin="120,2,0,0" Click="exitButton_Click" />
+		    Width="75" Margin="17.5,2,0,0" Click="exitButton_Click" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="Categories:" Margin="18,0,0,0"/>
