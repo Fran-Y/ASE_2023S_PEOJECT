@@ -71,7 +71,19 @@ namespace BookStoreGUI
                     return; // Exit without saving
                 }
 
-                row[columnName] = textBox.Text;
+                // Convert input to its proper type before saving to the DataRow
+                if (expectedType == typeof(int))
+                {
+                    row[columnName] = int.Parse(textBox.Text);
+                }
+                else if (expectedType == typeof(decimal))
+                {
+                    row[columnName] = decimal.Parse(textBox.Text);
+                }
+                else
+                {
+                    row[columnName] = textBox.Text;
+                }
             }
 
             // If all data types are valid, proceed with the save
@@ -89,16 +101,31 @@ namespace BookStoreGUI
             {
                 return int.TryParse(input, out _);
             }
+            else if (expectedType == typeof(decimal))
+            {
+                return decimal.TryParse(input, out _);
+            }
             else if (expectedType == typeof(double))
             {
                 return double.TryParse(input, out _);
+            }
+            else if (expectedType == typeof(DateTime))
+            {
+                return DateTime.TryParse(input, out _);
+            }
+            else if (expectedType == typeof(char))
+            {
+                return char.TryParse(input, out _);
+            }
+            else if (expectedType == typeof(bool))
+            {
+                return bool.TryParse(input, out _);
             }
             // Add more type checks as needed
 
             // By default, return false
             return false;
         }
-
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
