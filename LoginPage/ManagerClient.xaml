@@ -29,7 +29,7 @@
         </ComboBox>
 
 
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="TableDataGrid" Margin="20"/>
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="TableDataGrid" Margin="20" SelectionChanged="TableDataGrid_SelectionChanged_1"/>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
             <Button Name="AddButton" Content="Add" Click="AddButton_Click" 
                     Margin="10" Padding="15,5" VerticalAlignment="Center">

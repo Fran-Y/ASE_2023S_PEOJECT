@@ -106,6 +106,15 @@ namespace BookStoreGUI
             else MessageBox.Show("Please select one item from above.");
         }
 
+        private void TableDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TableDataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 }
