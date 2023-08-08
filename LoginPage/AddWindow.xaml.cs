@@ -58,18 +58,47 @@ namespace BookStoreGUI
             // Create a new row
             DataRow row = _table.NewRow();
 
-            // Get the data from the input fields and save it to the row
             foreach (KeyValuePair<string, TextBox> entry in _inputFields)
             {
                 string columnName = entry.Key;
                 TextBox textBox = entry.Value;
+
+                // Check the data type
+                Type expectedType = _table.Columns[columnName].DataType;
+                if (!IsValidDataType(textBox.Text, expectedType))
+                {
+                    MessageBox.Show($"Invalid data type for {columnName}. Expected {expectedType.Name}.");
+                    return; // Exit without saving
+                }
+
                 row[columnName] = textBox.Text;
             }
 
-            // Finally, add the row to the table
+            // If all data types are valid, proceed with the save
             _dal.AddRow(_tableName, row);
             this.DialogResult = true;
         }
+
+        private bool IsValidDataType(string input, Type expectedType)
+        {
+            if (expectedType == typeof(string))
+            {
+                return true; // Always valid for strings
+            }
+            else if (expectedType == typeof(int))
+            {
+                return int.TryParse(input, out _);
+            }
+            else if (expectedType == typeof(double))
+            {
+                return double.TryParse(input, out _);
+            }
+            // Add more type checks as needed
+
+            // By default, return false
+            return false;
+        }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
