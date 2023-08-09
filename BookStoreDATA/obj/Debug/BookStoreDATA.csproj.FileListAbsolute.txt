@@ -1,0 +1,11 @@
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\bin\Debug\BookStoreDATA.exe.config
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\bin\Debug\BookStoreDATA.exe
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\bin\Debug\BookStoreDATA.pdb
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.csproj.AssemblyReference.cache
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\App.g.cs
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA_MarkupCompile.cache
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.Properties.Resources.resources
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.csproj.GenerateResource.cache
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.csproj.CoreCompileInputs.cache
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.exe
+E:\Uwindsor\2023S\ASE\BookStore\BookStoreDATA\obj\Debug\BookStoreDATA.pdb
