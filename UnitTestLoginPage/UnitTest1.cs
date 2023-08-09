@@ -1,5 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using BookStoreLIB;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Text.RegularExpressions;
 
 namespace UnitTestLoginPage
@@ -86,6 +89,44 @@ namespace UnitTestLoginPage
             Assert.AreEqual(expectedReturn, actualReturn);
             Assert.AreEqual(expectedUserId, actualUserId);
 
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            DataAccessLayer DAL = new DataAccessLayer(Properties.Settings.Default.ywConnectionString);
+            int UserId = 1;
+
+            DataTable result = DAL.GetCustomerOrders(UserId);
+
+            Assert.IsNotNull(result);
+
+        }
+
+        [TestMethod]
+        public void TestMethod7()
+        {
+            DataAccessLayer DAL = new DataAccessLayer(Properties.Settings.Default.ywConnectionString);
+            int UserId = 1;
+
+            DataTable result = DAL.GetCustomerOrders(UserId);
+
+            foreach (DataRow item in result.Rows)
+            {
+                Assert.AreEqual(UserId, item[1]);
+            }
+
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            DataAccessLayer DAL = new DataAccessLayer(Properties.Settings.Default.ywConnectionString);
+            int UserId = 8;
+
+            DataTable result = DAL.GetCustomerOrders(UserId);
+
+            Assert.AreEqual(0, result.Rows.Count);
         }
     }
 }
